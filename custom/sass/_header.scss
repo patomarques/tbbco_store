@@ -1,0 +1,41 @@
+.banner-home{
+  position: relative;
+  width: 100%;
+
+  .logo{
+    position: absolute;
+    z-index: 99;
+    margin: 30px;
+    width: 250px;
+  }
+}
+
+.menu-top{
+  .logo-fix{
+    padding: 5px;
+  }
+  .logo-fix-img{
+    height: 70px;
+  }
+}
+
+.cart-link{
+  text-align: right;
+  display: inline-block;
+  right:0;
+  float: right;
+  padding-top: 18px;
+
+  &:hover{
+
+  }
+
+  .icon-cart path{
+    fill: #ff0000;
+  }
+}
+
+.menu-top{
+  z-index: 99;
+  position: relative;
+}

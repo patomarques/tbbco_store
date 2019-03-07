@@ -36,7 +36,17 @@ $container = get_theme_mod( 'understrap_container_type' );
 <header class="menu-top <?php if( !is_home() ){ echo 'menu-fixed'; } ; ?>">
     <div class="container">
         <div class="row">
-            <div class="col-xs-12 col-sm-3 col-md-3"></div>
+            <div class="col-xs-12 col-sm-3 col-md-3">
+                <div class="menu-top">
+                    <div class="menu-bg"></div>
+                    <div class="menu-burger">☰</div>
+                    <div class="menu-items">
+                        <div>ITEM 1</div>
+                        <div>ITEM 2</div>
+                        <div>ITEM 3</div>
+                    </div>
+                </div>
+            </div>
             <div class="col-xs-12 col-sm-12 col-md-6">
                 <div class="logo-fix text-center">
                     <img src="<?php echo get_theme_file_uri(); ?>/custom/img/tbbc-logo-2.png" alt="" class="logo-fix-img">
