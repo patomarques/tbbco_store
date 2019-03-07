@@ -1,0 +1,9 @@
+{
+	"version": 3,
+	"file": "custom-editor-style.css",
+	"sources": [
+		"custom-editor-style.scss"
+	],
+	"names": [],
+	"mappings": ""
+}
