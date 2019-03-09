@@ -1,0 +1,57 @@
+@mixin transition($duration) {
+  -webkit-transition: all $duration ease-in-out;
+  -moz-transition: all $duration ease-in-out;
+  -o-transition: all $duration ease-in-out;
+  transition: all $duration ease-in-out;
+}
+
+@mixin border-radius($radius){
+  -webkit-border-radius: $radius !important;
+  -moz-border-radius: $radius !important;
+  border-radius: $radius !important;
+}
+
+@keyframes fadeInRight {
+  0% {
+    opacity: 0;
+    left: 20%;
+  }
+  100% {
+    opacity: 1;
+    left: 0;
+  }
+}
+
+@mixin animated-underline($color: $color__link, $bottom: 3px, $height: 1px) {
+  position: relative;
+  display: inline-block;
+
+  &:after {
+    content: "";
+    position: absolute;
+    bottom: $bottom;
+    left: 0;
+    width: 100%;
+    height: $height;
+    background-color: $color;
+    visibility: hidden;
+    transform: scaleX(0);
+    transition: all 0.3s ease-in-out;
+  }
+
+  &:hover {
+    &:after {
+      visibility: visible;
+      transform: scaleX(1);
+    }
+  }
+}
+
+/* implements */
+.trans{
+  @include transition(.25s);
+}
+
+.link-underline{
+  @include animated-underline($c-green);
+}

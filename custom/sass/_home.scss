@@ -1,3 +1,26 @@
 #page-home{
   min-height: 800px;
 }
+
+.list-products{
+  margin: 0;
+
+  li.product-item{
+    margin: 0 0 20px 0;
+
+    .title-product{
+      display: block;
+      height: 65px;
+    }
+  }
+}
+@media only screen and (max-width: 1366px) and (min-width: 1025px){
+  #wds_container1_0 #wds_container2_0 .wds_left-ico_0,
+  #wds_container1_0 #wds_container2_0 .wds_right-ico_0 {
+    font-size: 100px;
+  }
+  #wds_container1_0 #wds_container2_0 .wds_left_btn_cont,
+  #wds_container1_0 #wds_container2_0 .wds_right_btn_cont {
+    font-size: 100px !important;
+  }
+}
