@@ -16,38 +16,26 @@ $container = get_theme_mod( 'understrap_container_type' );
 
 <?php get_template_part( 'sidebar-templates/sidebar', 'footerfull' ); ?>
 
-<div class="wrapper bg-black" id="wrapper-footer">
+    <div class="wrapper-footer bg-black" id="wrapper-footer">
+        <div class="container">
+<!--            <div class="row">-->
+<!--                <div class="col-12 col-md-6">-->
+<!--                    teste-->
+<!--                </div>-->
+<!--                <div class="col-12 col-md-6">-->
+<!--testes-->
+<!--                </div>-->
+<!--            </div>-->
+            <div class="row">
+                <div class="col-12 text-center footer-copyfight">
+                    <a href="/" class="c-pink">The Boom Bap Co <?= date('Y') ?></a>
+                    <span class="c-white">&#9398;</span> <span class="c-green">Todos os direitos reservados</span>
+                </div>
+            </div>
+        </div>
+    </div>
 
-    <div class="<?php echo esc_attr( $container ); ?>">
-
-        <div class="row">
-
-            <div class="col-md-12">
-
-                <footer class="site-footer" id="colophon">
-
-                    <div class="site-info">
-                        <div class="container">
-                            <div class="row">
-                                <div class="col-12 text-center">
-                                    <a href="/" class="c-pink">The Boom Bap Co <?= date('Y') ?></a>
-                                    <span class="c-white">&#9398;</span> <span class="c-pink">Todos os direitos reservados</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div><!-- .site-info -->
-
-                </footer><!-- #colophon -->
-
-            </div><!--col end -->
-
-        </div><!-- row end -->
-
-    </div><!-- container end -->
-
-</div><!-- wrapper end -->
-
-</div><!-- #page we need this extra closing tag here -->
+</div>
 
 <?php wp_footer(); ?>
 

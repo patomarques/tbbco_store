@@ -34,23 +34,33 @@ $container = get_theme_mod( 'understrap_container_type' );
 <?php } ?>
 
 <header class="menu-top <?php if( !is_home() ){ echo 'menu-fixed'; } ; ?>">
+    <div class="top-bar bg-pink-gradient">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-sm-6">
+                    <a href="https://www.instagram.com/theboombap_co/" class="icon icon-link icon-ig c-white" target="_blank">
+                        <i class="fa fa-instagram"></i>
+                    </a>
+                </div>
+                <div class="col-12 col-sm-6">
+                    <p class="topo-text">Seja bem vinda/o, clique para <a href="#" class="link-underline">entrar</a> ou <a href="#" class="link-underline">cadastre-se</a>.</p>
+                </div>
+            </div>
+        </div>
+    </div>
     <div class="container">
         <div class="row">
             <div class="col-xs-12 col-sm-3 col-md-3">
-                <div class="menu-top">
-                    <div class="menu-bg"></div>
-                    <div class="menu-burger">☰</div>
-                    <div class="menu-items">
-                        <div>ITEM 1</div>
-                        <div>ITEM 2</div>
-                        <div>ITEM 3</div>
-                    </div>
+                <div class="button_container" id="toggle">
+                    <span class="top"></span>
+                    <span class="middle"></span>
+                    <span class="bottom"></span>
                 </div>
             </div>
             <div class="col-xs-12 col-sm-12 col-md-6">
-                <div class="logo-fix text-center">
+                <a class="logo-fix text-center" href="/">
                     <img src="<?php echo get_theme_file_uri(); ?>/custom/img/tbbc-logo-2.png" alt="" class="logo-fix-img">
-                </div>
+                </a>
             </div>
             <div class="col-xs-12 col-sm-3 col-md-3">
                 <a href="<?php echo get_site_url(); ?>/carrinho" class="cart-link">
@@ -62,6 +72,19 @@ $container = get_theme_mod( 'understrap_container_type' );
     </div>
 
 </header>
+
+
+<div class="overlay" id="overlay">
+    <nav class="overlay-menu">
+        <ul>
+            <li><a href="<?php echo get_site_url(); ?>">Início</a></li>
+            <li><a href="<?php echo get_site_url(); ?>/sobre">Sobre</a></li>
+            <li><a href="<?php echo get_site_url(); ?>/loja">Loja</a></li>
+            <li><a href="<?php echo get_site_url(); ?>/contato">Contato</a></li>
+        </ul>
+    </nav>
+</div>
+
 <div class="site" id="page">
 
 	<!-- ******************* The Navbar Area ******************* -->
@@ -69,7 +92,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 
 		<a class="skip-link sr-only sr-only-focusable" href="#content"><?php esc_html_e( 'Skip to content', 'understrap' ); ?></a>
 
-		<nav class="navbar navbar-expand-md navbar-dark bg-primary">
+		<nav class="navbar navbar-expand-md navbar-dark bg-primary hidden">
 
 		<?php if ( 'container' == $container ) : ?>
 			<div class="container">
