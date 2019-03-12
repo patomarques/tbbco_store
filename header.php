@@ -33,40 +33,43 @@ $container = get_theme_mod( 'understrap_container_type' );
 </div>
 <?php } ?>
 
-<header class="menu-top <?php if( !is_home() ){ echo 'menu-fixed'; } ; ?>">
-    <div class="top-bar bg-pink-gradient">
+<header id="menu-top" class="menu-top hidden <?php if( !is_front_page() ){ echo 'menu-fixed'; } ; ?>">
+    <div class="top-bar bg-black">
         <div class="container">
             <div class="row">
-                <div class="col-12 col-sm-6">
-                    <a href="https://www.instagram.com/theboombap_co/" class="icon icon-link icon-ig c-white" target="_blank">
-                        <i class="fa fa-instagram"></i>
-                    </a>
-                </div>
-                <div class="col-12 col-sm-6">
+<!--                <div class="col-12 col-sm-6">-->
+<!--                    <a href="https://www.instagram.com/theboombap_co/" class="icon icon-link icon-ig c-white" target="_blank">-->
+<!--                        <i class="fa fa-instagram"></i>-->
+<!--                    </a>-->
+<!--                </div>-->
+                <div class="col-12">
                     <p class="topo-text">Seja bem vinda/o, clique para <a href="#" class="link-underline">entrar</a> ou <a href="#" class="link-underline">cadastre-se</a>.</p>
                 </div>
             </div>
         </div>
     </div>
-    <div class="container">
-        <div class="row">
-            <div class="col-xs-12 col-sm-3 col-md-3">
-                <div class="button_container" id="toggle">
-                    <span class="top"></span>
-                    <span class="middle"></span>
-                    <span class="bottom"></span>
+    <div class="container-full bg-white">
+        <div class="container">
+            <div class="row">
+                <div class="col-6 col-sm-3 col-md-3 order-2 order-sm-1 content-menu">
+                    <div class="button_container" id="btn-menu-fix-open">
+                        <span class="top"></span>
+                        <span class="middle"></span>
+                        <span class="bottom"></span>
+                    </div>
                 </div>
-            </div>
-            <div class="col-xs-12 col-sm-12 col-md-6">
-                <a class="logo-fix text-center" href="/">
-                    <img src="<?php echo get_theme_file_uri(); ?>/custom/img/tbbc-logo-2.png" alt="" class="logo-fix-img">
-                </a>
-            </div>
-            <div class="col-xs-12 col-sm-3 col-md-3">
-                <a href="<?php echo get_site_url(); ?>/carrinho" class="cart-link">
-                    <img src="<?php echo get_theme_file_uri(); ?>/custom/img/icons/shopping-bags.svg" alt="Carrinho"
-                         class="icon icon-cart">
-                </a>
+                <div class="col-12 col-sm-12 col-md-6 order-1 order-sm-2 content-logo">
+                    <a class="logo-fix text-center" href="/">
+                        <img src="<?php echo get_theme_file_uri(); ?>/custom/img/tbbc-logo-2.png" alt="" class="logo-fix-img">
+                    </a>
+                </div>
+                <div class="col-6 col-sm-3 col-md-3 order-3 content-cart">
+                    <a href="<?php echo get_site_url(); ?>/carrinho" class="cart-link">
+                        <span class="qty">00</span>
+                        <img src="<?php echo get_theme_file_uri(); ?>/custom/img/icons/shopping-bags.svg" alt="Carrinho"
+                             class="icon icon-cart">
+                    </a>
+                </div>
             </div>
         </div>
     </div>
@@ -75,6 +78,11 @@ $container = get_theme_mod( 'understrap_container_type' );
 
 
 <div class="overlay" id="overlay">
+    <div class="button_container" id="btn-menu-fix-close">
+        <span class="top"></span>
+        <span class="middle"></span>
+        <span class="bottom"></span>
+    </div>
     <nav class="overlay-menu">
         <ul>
             <li><a href="<?php echo get_site_url(); ?>">Início</a></li>
@@ -85,7 +93,7 @@ $container = get_theme_mod( 'understrap_container_type' );
     </nav>
 </div>
 
-<div class="site" id="page">
+<div class="site <?php if( !is_front_page() ){ echo 'content-page'; } ; ?>" id="page">
 
 	<!-- ******************* The Navbar Area ******************* -->
 	<div id="wrapper-navbar" itemscope itemtype="http://schema.org/WebSite">

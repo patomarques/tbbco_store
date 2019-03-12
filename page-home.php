@@ -26,9 +26,10 @@
               $loop = new WP_Query( $args );
 
               while ( $loop->have_posts() ) : $loop->the_post(); global $product; ?>
-                  <li class="product-item list-inline-item col-12 col-sm-6 col-md-4 col-lg-3">
-                      <a id="id-<?php the_id(); ?>" href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
-                          <?php if (has_post_thumbnail( $loop->post->ID )) echo get_the_post_thumbnail($loop->post->ID, 'shop_catalog'); else echo '<img src="'.woocommerce_placeholder_img_src().'" alt="My Image Placeholder" width="65px" height="115px" />'; ?>
+                  <li class="product-item list-inline-item col-12 col-sm-6 col-md-4 col-lg-3 zoom-img">
+                      <a id="id-<?php the_id(); ?>" href="<?php the_permalink(); ?>"
+                         title="<?php the_title(); ?>" class="product-img">
+                          <?php if (has_post_thumbnail( $loop->post->ID )) echo get_the_post_thumbnail($loop->post->ID, 'shop_catalog'); ?>
                           <span class="title-product">
                             <h3 class=""><?php the_title(); ?></h3>
                         </span>

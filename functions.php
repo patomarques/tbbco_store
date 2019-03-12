@@ -37,3 +37,29 @@ function add_child_theme_textdomain() {
     load_child_theme_textdomain( 'understrap-child', get_stylesheet_directory() . '/languages' );
 }
 add_action( 'after_setup_theme', 'add_child_theme_textdomain' );
+
+add_filter('single_add_to_cart_text', 'woo_custom_cart_button_text');
+
+function woo_custom_cart_button_text() {
+    return __('Adicionar a sacola', 'woocommerce');
+}
+
+if ( ! function_exists( 'storefront_cart_link' ) ) {
+    /**
+     * Cart Link
+     * Displayed a link to the cart including the number of items present and the cart total
+     *
+     * @return void
+     * @since  1.0.0
+     */
+    function storefront_cart_link()
+    {
+        ?>
+        <a class="cart-contents" href="<?php echo esc_url(wc_get_cart_url()); ?>"
+           title="<?php esc_attr_e('View your shopping cart', 'storefront'); ?>">
+            <span class="amount"><?php echo wp_kses_data(WC()->cart->get_cart_subtotal()); ?></span> <span
+                class="count"><?php echo wp_kses_data(sprintf(_n('%d item', '%d items', WC()->cart->get_cart_contents_count(), 'storefront'), WC()->cart->get_cart_contents_count())); ?></span>
+        </a>
+        <?php
+    }
+}
