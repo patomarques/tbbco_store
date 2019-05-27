@@ -7,6 +7,9 @@
 .bg-pink {
   background-color: #f27bfa; }
 
+.bg-white {
+  background-color: #ffffff; }
+
 /* Font Colors */
 .c-white {
   color: #ffffff; }
@@ -20,6 +23,7 @@
 .c-green {
   color: #4bbf5a; }
 
+/* Responsive Variables */
 @keyframes fadeInRight {
   0% {
     opacity: 0;
@@ -74,25 +78,30 @@
     width: 250px; }
 
 .menu-top .logo-fix {
-  padding: 5px;
+  padding: 0;
   display: block; }
 
 .menu-top .logo-fix-img {
-  height: 70px; }
+  height: 60px; }
 
 .top-bar .icon-ig {
-  font-size: 22px; }
+  color: #f27bfa;
+  display: block;
+  margin: 6px 0 0 10px; }
   .top-bar .icon-ig i {
-    padding-top: 8px; }
+    -webkit-border-radius: 50% !important;
+    -moz-border-radius: 50% !important;
+    border-radius: 50% !important;
+    background-color: #4bbf5a;
+    padding: 4px 5px;
+    font-size: 20px; }
 
 .cart-link {
   text-align: right;
   display: inline-block;
   right: 0;
   float: right;
-  padding-top: 18px; }
-  .cart-link .icon-cart path {
-    fill: #ff0000; }
+  padding-top: 12px; }
 
 /* menu */
 .button_container {
@@ -102,7 +111,7 @@
   cursor: pointer;
   z-index: 100;
   transition: opacity .25s ease;
-  margin-top: 25px; }
+  margin: 16px 0; }
   .button_container:hover {
     opacity: .7; }
   .button_container.active .top {
@@ -115,7 +124,7 @@
     transform: translateY(-11px) translateX(0) rotate(-45deg);
     background: #ffffff; }
   .button_container span {
-    background: #f27bfa;
+    background: #000000;
     border: none;
     height: 3px;
     width: 100%;
@@ -131,7 +140,7 @@
 
 .overlay {
   position: fixed;
-  background: #f27bfa;
+  background: #000000;
   top: 0;
   left: 0;
   width: 100%;
@@ -144,7 +153,7 @@
     opacity: .9;
     visibility: visible;
     height: 100%;
-    z-index: 99; }
+    z-index: 1000; }
     .overlay.open li {
       animation: fadeInRight .5s ease forwards;
       animation-delay: .35s;
@@ -155,13 +164,18 @@
         animation-delay: .45s; }
       .overlay.open li:nth-of-type(4) {
         animation-delay: .50s; }
+    .overlay.open .button_container span {
+      background-color: #ffffff; }
+    .overlay.open .button_container.active {
+      position: absolute;
+      margin: 50px; }
   .overlay nav {
     position: relative;
     height: 70%;
     top: 50%;
     transform: translateY(-50%);
     font-size: 50px;
-    font-family: 'Vollkorn', serif;
+    font-family: "Titillium Web", sans-serif;
     font-weight: 400;
     text-align: center; }
   .overlay ul {
@@ -193,8 +207,10 @@
           width: 0%;
           transform: translateX(-50%);
           height: 3px;
-          background: #FFF;
+          background: #f27bfa;
           transition: .35s; }
+        .overlay ul li a:hover {
+          color: #f27bfa; }
 
 .menu-top a {
   color: #4bbf5a;
@@ -204,38 +220,8 @@
   content: '';
   width: 100%;
   height: 1px;
-  display: block; }
-
-.bg-pink-gradient, .menu-top:after {
-  background: linear-gradient(270deg, #f27bfa, #b908c4, #a207ac);
-  background-size: 600% 600%;
-  -webkit-animation: AnimationName 12s ease infinite;
-  -moz-animation: AnimationName 12s ease infinite;
-  animation: AnimationName 12s ease infinite; }
-
-@-webkit-keyframes AnimationName {
-  0% {
-    background-position: 0% 50%; }
-  50% {
-    background-position: 100% 50%; }
-  100% {
-    background-position: 0% 50%; } }
-
-@-moz-keyframes AnimationName {
-  0% {
-    background-position: 0% 50%; }
-  50% {
-    background-position: 100% 50%; }
-  100% {
-    background-position: 0% 50%; } }
-
-@keyframes AnimationName {
-  0% {
-    background-position: 0% 50%; }
-  50% {
-    background-position: 100% 50%; }
-  100% {
-    background-position: 0% 50%; } }
+  display: block;
+  background-color: #000000; }
 
 .topo-text {
   text-align: right;
@@ -245,62 +231,49 @@
   font-size: 16px;
   color: #ffffff; }
 
-.menu, .menu-bg, .menu-burger {
+.cart-link {
+  position: relative; }
+  .cart-link .qty {
+    position: absolute;
+    background-color: #000000;
+    color: #ffffff;
+    padding: 1px 4px;
+    font-size: 11px;
+    -webkit-border-radius: 50% !important;
+    -moz-border-radius: 50% !important;
+    border-radius: 50% !important;
+    margin: -2px 0 0 -10px;
+    z-index: 99; }
+
+.menu-fixed {
   position: fixed;
-  width: 50px;
-  height: 50px;
-  font-size: 30px;
-  text-align: center;
-  border-radius: 100%;
-  right: 25px;
-  top: 25px; }
+  top: 0;
+  z-index: 999;
+  width: 100%; }
+  .menu-fixed .button_container.active {
+    z-index: 1001; }
 
-.menu-bg {
-  background: #f27bfa;
-  pointer-events: none;
-  transition: .3s;
-  right: 50px;
-  top: 50px;
-  transform: translate3d(50%, -50%, 0);
-  transform-origin: center center; }
-  .menu-bg.fs {
-    transform: translate3d(50%, -50%, 0);
-    width: 300vw;
-    height: 300vw; }
-
-.menu-burger {
-  color: white;
-  padding-top: 3px;
-  -webkit-user-select: none;
-  cursor: pointer;
-  transition: .4s;
-  transform-origin: center; }
-  .menu-burger.fs {
-    transform: rotate(-180deg) translateY(10px);
-    top: 35px; }
-
-.menu-items {
-  position: absolute;
-  font-weight: bold;
-  font-size: 40px;
-  letter-spacing: 10px;
-  color: white;
-  width: 100%;
-  text-align: center;
-  opacity: 0;
-  transition: .4s;
-  transform: translateY(-200%);
-  pointer-events: none; }
-  .menu-items div {
-    transition: 1s;
-    opacity: 0;
-    margin-top: 0px; }
-  .menu-items.fs {
-    pointer-events: auto;
-    opacity: 1; }
-    .menu-items.fs div {
-      opacity: 1;
-      margin-top: 75px; }
+/**
+** @mediaqueries (responsive)
+ */
+/* Extra small devices (phones, less than 768px) */
+/* No media query since this is the default in Bootstrap */
+@media (max-width: 450px) {
+  .topo-text {
+    font-size: 12px;
+    text-align: center; }
+  .content-menu .button_container {
+    margin: 10px auto;
+    text-align: center; }
+  .content-cart .cart-link {
+    text-align: center;
+    display: block;
+    margin: 0 auto;
+    position: relative;
+    width: 100%;
+    padding-top: 3px; }
+  .overlay.open .button_container.active {
+    margin: 20px; } }
 
 #page-home {
   min-height: 800px; }
@@ -325,12 +298,40 @@
   background-color: #000000;
   padding: 10px 0; }
 
-.footer-copyfight {
-  font-size: 14px; }
+/**
+** @mediaqueries (responsive)
+ */
+/* Extra small devices (phones, less than 768px) */
+/* No media query since this is the default in Bootstrap */
+@media (max-width: 450px) {
+  .footer-copyfight {
+    font-size: 12px; } }
+
+@media (min-width: 451px) {
+  .footer-copyfight {
+    font-size: 14px; } }
+
+::-webkit-scrollbar {
+  width: 0.8em;
+  height: 0.8em; }
+
+::-webkit-scrollbar-thumb {
+  background: #000000;
+  -webkit-border-radius: 20px !important;
+  -moz-border-radius: 20px !important;
+  border-radius: 20px !important; }
+
+::-webkit-scrollbar-track {
+  background: #f2f2f2;
+  -webkit-border-radius: 20px !important;
+  -moz-border-radius: 20px !important;
+  border-radius: 20px !important; }
 
 body {
   overflow-x: hidden;
-  font-family: "Titillium Web", sans-serif; }
+  font-family: "Titillium Web", sans-serif;
+  scrollbar-face-color: #000000;
+  scrollbar-track-color: #f2f2f2; }
 
 a {
   outline: none !important;
@@ -343,5 +344,8 @@ a {
 
 .hidden {
   display: none !important; }
+
+.content-page {
+  margin-top: 130px; }
 
 /*# sourceMappingURL=tbbc.css.map */

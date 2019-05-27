@@ -1,6 +1,29 @@
+$size: .8em;
+$foreground-color: $c-black;
+$background-color: #f2f2f2;
+
+::-webkit-scrollbar {
+  width:  $size;
+  height: $size;
+}
+
+::-webkit-scrollbar-thumb {
+  background: $foreground-color;
+  @include border-radius(20px);
+}
+
+::-webkit-scrollbar-track {
+  background: $background-color;
+  @include border-radius(20px);
+}
+
+// For Internet Explorer
+
 body{
   overflow-x: hidden;
   font-family: $ff-default;
+  scrollbar-face-color: $foreground-color;
+  scrollbar-track-color: $background-color;
 }
 
 a{
@@ -21,3 +44,15 @@ a{
 .hidden{
   display: none !important;
 }
+
+.content-page{
+  margin-top: 130px;
+}
+
+//.zoom-img{
+//  transition: transform .2s; /* Animation */
+//  overflow: hidden;
+//  &:hover{
+//    transform: scale(1.5);
+//  }
+//}

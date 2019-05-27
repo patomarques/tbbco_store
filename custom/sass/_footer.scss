@@ -3,6 +3,19 @@
   padding: 10px 0;
 }
 
-.footer-copyfight{
-  font-size: 14px;
+/**
+** @mediaqueries (responsive)
+ */
+/* Extra small devices (phones, less than 768px) */
+/* No media query since this is the default in Bootstrap */
+@media (max-width: 450px) {
+  .footer-copyfight{
+    font-size: 12px;
+  }
+}
+
+@media (min-width: 451px) {
+  .footer-copyfight{
+    font-size: 14px;
+  }
 }

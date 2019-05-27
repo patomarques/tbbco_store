@@ -17,6 +17,10 @@ $button-width: 35px;
   background-color: $c-pink;
 }
 
+.bg-white{
+  background-color: $c-white;
+}
+
 /* Font Colors */
 .c-white{
   color: $c-white;
@@ -33,3 +37,10 @@ $button-width: 35px;
 .c-green{
   color: $c-green;
 }
+
+/* Responsive Variables */
+$screen-xs-min: 320px;
+$screen-xs-max: 450px;
+$screen-sm-min: 768px;
+$screen-md-min: 992px;
+$screen-lg-min: 1200px;

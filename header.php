@@ -33,7 +33,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 </div>
 <?php } ?>
 
-<header id="menu-top" class="menu-top hidden <?php if( !is_front_page() ){ echo 'menu-fixed'; } ; ?>">
+<header id="menu-top" class="menu-top <?php if( !is_front_page() ){ echo 'menu-fixed'; }else{ echo "hidden"; } ?>">
     <div class="top-bar bg-black">
         <div class="container">
             <div class="row">
